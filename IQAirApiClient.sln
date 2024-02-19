@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQAirApiClient", "IQAirApiClient\IQAirApiClient.csproj", "{6AAA260F-6514-45C3-A4DF-947B294865AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQAirApiClient.Console", "IQAirApiClient.Console\IQAirApiClient.Console.csproj", "{3B91BEC2-7F23-4EEA-8831-2F43BA6BBD3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6AAA260F-6514-45C3-A4DF-947B294865AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AAA260F-6514-45C3-A4DF-947B294865AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AAA260F-6514-45C3-A4DF-947B294865AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B91BEC2-7F23-4EEA-8831-2F43BA6BBD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B91BEC2-7F23-4EEA-8831-2F43BA6BBD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B91BEC2-7F23-4EEA-8831-2F43BA6BBD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B91BEC2-7F23-4EEA-8831-2F43BA6BBD3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
