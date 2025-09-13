@@ -19,6 +19,8 @@ namespace IQAirApiClient
         Task<Result<IList<CityItem>>> ListSupportedCitiesInState(string country, string state);
 
         Task<Result<CityData>> GetSpecifiedCityData(string country, string state, string city);
+
+        Task<Result<CityData>> GetNearestCityData(int lat, int lon);
     }
 
     public class AirVisualApiClient : IAirVisualApi
@@ -64,6 +66,15 @@ namespace IQAirApiClient
             query["city"] = city;
             
             return await GetRequest<CityData>("city", query);
+        }
+
+        public async Task<Result<CityData>> GetNearestCityData(int lat, int lon)
+        {
+            var query = HttpUtility.ParseQueryString("");
+            query["lat"] = lat.ToString();
+            query["lon"] = lon.ToString();
+            
+            return await GetRequest<CityData>("nearest_city", query);
         }
 
         private async Task<Result<T>> GetRequest<T>(string endpoint, NameValueCollection? query = null)
