@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace IQAirApiClient
 
         Task<Result<CityData>> GetSpecifiedCityData(string country, string state, string city);
 
-        Task<Result<CityData>> GetNearestCityData(int lat, int lon);
+        Task<Result<CityData>> GetNearestCityData(double lat, double lon);
     }
 
     public class AirVisualApiClient : IAirVisualApi
@@ -68,11 +69,11 @@ namespace IQAirApiClient
             return await GetRequest<CityData>("city", query);
         }
 
-        public async Task<Result<CityData>> GetNearestCityData(int lat, int lon)
+        public async Task<Result<CityData>> GetNearestCityData(double lat, double lon)
         {
             var query = HttpUtility.ParseQueryString("");
-            query["lat"] = lat.ToString();
-            query["lon"] = lon.ToString();
+            query["lat"] = lat.ToString(CultureInfo.InvariantCulture);
+            query["lon"] = lon.ToString(CultureInfo.InvariantCulture);
             
             return await GetRequest<CityData>("nearest_city", query);
         }
