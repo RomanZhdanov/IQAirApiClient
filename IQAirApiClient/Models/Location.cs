@@ -4,6 +4,6 @@ namespace IQAirApiClient.Models
     {
         public string Type { get; set; }
         
-        public float[] Coordinates { get; set; }
+        public double[] Coordinates { get; set; }
     }
 }
